@@ -1,4 +1,4 @@
-const {Node} = require('./node-class');
+
 const {LinkedList} = require('./linkedlist-class');
 
 
@@ -15,12 +15,13 @@ honk.prepend("bassoon")
 honk.head();
 honk.tail();
 
+console.log(honk.toString())
 console.table(honk);
-// console.log(honk.size());
-// console.log(honk.at(2));
-// honk.pop();
-// console.table(honk);
-honk.tail()
-// console.log(honk.contains("tuba"));
-// console.log(honk.find("trombone"))
+console.log(honk.size());
+console.log(honk.at(0));
+honk.pop();
+console.log(honk.contains("tuba"));
+console.log(honk.find("trombone"))
+honk.insertAt("concertina", 2)
+honk.removeAt(1);
 console.log(honk.toString())

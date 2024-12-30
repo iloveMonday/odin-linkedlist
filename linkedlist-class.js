@@ -68,9 +68,6 @@ class LinkedList{
             previous = head;
             head = head.nextNode;
         }
-        // console.log(previous)
-        // previous.nextNode = null
-        // console.log(previous)
         this.last = previous;
         this.last.nextNode = null;
     }
@@ -104,6 +101,44 @@ class LinkedList{
         }
         string += null
         return string;
+    }
+
+    insertAt(value, index){
+        if (index == 0){
+            this.prepend(value)
+        }
+
+        const newNode = new Node(value);
+        let head = this.first;
+        let priorNode = "";
+
+        for (let i = 0; i < index; i++){
+            if (head.nextNode == null){
+                this.append(value);
+                return;
+            }
+            priorNode = head;
+            head = head.nextNode;
+        }
+
+        newNode.nextNode = head;
+        priorNode.nextNode = newNode;
+    }
+
+    removeAt(index){
+        let head = this.first;
+        let priorNode = "";
+
+        for (let i = 0; i < index; i++){
+            if (head.nextNode == null){
+                console.log("No Such Index");
+                return;
+            }
+            priorNode = head;
+            head = head.nextNode;
+        }
+        priorNode.nextNode = head.nextNode;
+
     }
 
 
